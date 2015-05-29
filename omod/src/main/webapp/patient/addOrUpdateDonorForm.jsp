@@ -7,6 +7,8 @@
 <br/>
 <div id="wrapper">
 	<div id="leftCol" style="float:left; min-width:500px">
+
+
 		<form class="box" id="addDonorForm" method="post">
 			<div class="boxHeader">Search Donor by Name</div>
 			<div>
@@ -70,6 +72,8 @@
 			</div>
 			<div> <input  style="margin-top:12px;" id="saveButton" name="saveButton" disabled="true" type="submit" value="<spring:message code="general.save"/>"/> <b id="savemessage" style="display:none; color:red">Already existing!</b> </div>
 		</form>
+
+
 	</div>
 </div>
 <!--Right colstart -->
@@ -216,39 +220,103 @@
 		var patidentifier = jQuery("#patId").attr('value');
 		var donidentifier = jQuery("#donId").attr('value');
 		var birthdate = jQuery("#donorDob").attr('value');
-		var address = jQuery("#donorAddress1").attr('value');
-		var idValid = jQuery("#existId").attr('value');
-		var noPatients = jQuery('#display').is(':empty');
+		var address = jQuery("#d<!-- Header & Include -->
+		<%@ include file="/WEB-INF/template/include.jsp"%>
+		<%@ include file="/WEB-INF/template/header.jsp"%>
 
-		var dataEnteredisValid = function() {
-			return ( name!="" && fatherhusband!="" && patidentifier!="" && patidentifier!=undefined && donidentifier!="" && donidentifier!=undefined && birthdate!="" && address!="");
-		}
+		<script type="text/javascript" src="${pageContext.request.contextPath}/moduleResources/blooddonationmanager/scripts/jquery/js/jquery-1.4.2.min.js"></script>
 
-		var dataEnteredisValid2 = function() {
-			return ( name!="" && idValid=="yes" && noPatients && patidentifier!="" && patidentifier!=undefined && donidentifier!="" && donidentifier!=undefined && birthdate!="" && address!="");
-		}
+<openmrs:require privilege="Add Donor" otherwise="/login.htm" redirect="/module/blooddonationmanager/main.form" />
 
-		if(jQuery("#preregistered").attr('checked') == false){
-			if(dataEnteredisValid()){
-				document.getElementById("saveButton").disabled = false;
-				if(!noPatients){
-					document.getElementById("savemessage").style.display="block";
-					document.getElementById("saveButton").value="Save anyway";
-				}
-			}
-			else{
-				document.getElementById("saveButton").disabled = true;
-			}
-		}else{
-			if(dataEnteredisValid2()){
-				document.getElementById("saveButton").disabled = false;
-			}
-			else{
-				document.getElementById("saveButton").disabled = true;
-			}
+donor reg
+
+<div id="display" name="display"></div>
+<h2>
+	<spring:message code="blooddonationmanager.add.donor" />
+</h2>
+<br/>
+<form class="box" id="addDonorForm" method="post">
+	<table >
+		<tr>
+			<td><spring:message code="blooddonationmanager.donor.name"/></td>
+			<td><input type="text" id="donorName" name="donorName" value=""/></td>
+		</tr>
+	</table>
+</form>
+
+<br/>
+<span class="boxHeader">List of Donors</span>
+
+
+<script>
+	jQuery(document).ready(function(){
+
+		jQuery.ajaxSetup ({
+			cache: false
+		});
+
+		jQuery("#donorName").focus();
+	});
+
+	var ajax_load = "<img src='${pageContext.request.contextPath}/moduleResources/blooddonationmanager/scripts/jquery/css/images/ui-anim_basic_16x16.gif' alt='loading...' />";
+
+	//  load() functions
+	var loadUrl = "findDonorByNameOrId.form";
+	//     jQuery("#donorName").keyup(function(){
+	//         if(jQuery("#donorName").val().length>=3)
+	//         jQuery("#display").html(ajax_load).load(loadUrl, {donorName: jQuery("#donorName").val()});
+	//     });
+
+	//  jQuery.post()
+	jQuery("#donorName").keyup(function(){
+		if(jQuery("#donorName").val().length>=3){
+			jQuery("#display").html(ajax_load);
+			jQuery.post(
+					loadUrl,
+					{donorName: jQuery("#donorName").val()},
+					function(responseText){
+						jQuery("#display").html(responseText);
+					},
+					"html"
+			);
 		}
-	}
+	});
 
 </script>
 
 <%@ include file="/WEB-INF/template/footer.jsp"%>
+<%--
+onorAddress1").attr('value');
+        var idValid = jQuery("#existId").attr('value');
+        var noPatients = jQuery('#display').is(':empty');
+
+        var dataEnteredisValid = function() {
+            return ( name!="" && fatherhusband!="" && patidentifier!="" && patidentifier!=undefined && donidentifier!="" && donidentifier!=undefined && birthdate!="" && address!="");
+        }
+
+        var dataEnteredisValid2 = function() {
+            return ( name!="" && idValid=="yes" && noPatients && patidentifier!="" && patidentifier!=undefined && donidentifier!="" && donidentifier!=undefined && birthdate!="" && address!="");
+        }
+
+        if(jQuery("#preregistered").attr('checked') == false){
+            if(dataEnteredisValid()){
+                document.getElementById("saveButton").disabled = false;
+                if(!noPatients){
+                    document.getElementById("savemessage").style.display="block";
+                    document.getElementById("saveButton").value="Save anyway";
+                }
+            }
+            else{
+                document.getElementById("saveButton").disabled = true;
+            }
+        }else{
+            if(dataEnteredisValid2()){
+                document.getElementById("saveButton").disabled = false;
+            }
+            else{
+                document.getElementById("saveButton").disabled = true;
+            }
+        }
+    }
+
+</script>--%>
