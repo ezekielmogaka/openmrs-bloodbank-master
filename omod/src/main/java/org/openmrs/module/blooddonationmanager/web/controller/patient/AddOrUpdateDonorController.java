@@ -5,8 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.*;
 import org.openmrs.api.PatientService;
 import org.openmrs.api.context.Context;
-//import org.openmrs.module.blooddonationmanager.api.BloodDonationManagerService;
-//import org.openmrs.module.blooddonationmanager.api.model.PreparedDonorId;
 import org.openmrs.module.blooddonationmanager.api.BloodDonationManagerService;
 import org.openmrs.module.blooddonationmanager.api.model.PreparedDonorId;
 import org.springframework.stereotype.Controller;
@@ -22,8 +20,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
-
-//import org.openmrs.module.BloodDonationManager.BloodDonationService;
 
 @Controller
 @RequestMapping("/module/blooddonationmanager/addOrUpdate.form")

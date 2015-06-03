@@ -89,7 +89,7 @@
 
 		jQuery("#donorDob").datepicker({
 			showOn: 'button',
-			buttonImage: '${pageContext.request.contextPath}/moduleResources/blooddonationmanagerManager/styles/images/calendar.gif',
+			buttonImage: '${pageContext.request.contextPath}/moduleResources/blooddonationmanager/styles/images/calendar.gif',
 			buttonImageOnly: true,
 			changeMonth: true,
 			changeYear: true,
