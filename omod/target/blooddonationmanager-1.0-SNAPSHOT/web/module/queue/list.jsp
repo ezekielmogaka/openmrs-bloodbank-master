@@ -3,7 +3,7 @@
 <%@ include file="../includes/js_css.jsp" %>
 <!-- include of header.jsp not working -->
 <br/>
-<openmrs:require privilege="Edit Encounters" otherwise="/login.htm" redirect="/module/blooddonation/queue.form" />
+<openmrs:require privilege="Edit Encounters" otherwise="/login.htm" redirect="/module/blooddonationmanager/queue.form" />
 
 <script type="text/javascript">
 
@@ -23,7 +23,7 @@
 		var phrase = $("#phrase").val();
 		$.ajax({
 			type : "GET",
-			url : getContextPath() + "/module/BloodDonationManager/searchTest.form",
+			url : getContextPath() + "/module/donationmanager/searchTest.form",
 			data : ({
 				date			: date,
 				phrase			: phrase,
@@ -47,7 +47,7 @@
 		var scrollTop = $("#acceptBox_" + orderId).scrollTop();
 		$.ajax({
 			type : "POST",
-			url : getContextPath() + "/module/BloodDonationManager/searchTest.form",
+			url : getContextPath() + "/module/blooddonationmanager/searchTest.form",
 			data : ({
 				orderId : orderId,
 				//date	: $("#date").val()

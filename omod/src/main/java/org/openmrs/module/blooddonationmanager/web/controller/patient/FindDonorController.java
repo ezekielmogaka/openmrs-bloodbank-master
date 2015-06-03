@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Iterator;
 import java.util.List;
 
-//import org.openmrs.module.BloodDonationManager.BloodBankService;
 
 @Controller
 @RequestMapping("/module/blooddonationmanager/patient/findDonorByNameOrId.form")
@@ -31,7 +30,7 @@ public class FindDonorController{
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(ModelMap map){
-		return "/module/BloodDonationManager/patient/findDonor";
+		return "/module/blooddonationmanager/patient/findDonor";
 	}
 	                            
 	@ModelAttribute("html")

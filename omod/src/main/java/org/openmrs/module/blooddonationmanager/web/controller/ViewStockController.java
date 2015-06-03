@@ -23,7 +23,6 @@ import org.openmrs.api.context.Context;
 //import org.openmrs.module.blooddonationmanager.api.model.BloodDonationManagerService;
 import org.openmrs.module.blooddonationmanager.api.model.BloodDonationManager;
 import org.openmrs.module.blooddonationmanager.api.BloodDonationManagerService;
-import org.openmrs.module.blooddonationmanager.api.model.BloodDonationManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +55,7 @@ public class ViewStockController{
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String initForm(Model model){
+
 
 		BloodDonationManagerService service = Context.getService(BloodDonationManagerService.class);
 		
