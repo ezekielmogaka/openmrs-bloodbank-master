@@ -12,12 +12,12 @@
             <div class="boxHeader">Search Donor by Name</div>
             <div>
                 <div>
-                    <div style="margin-top:12px;"><spring:message code="blooddonationmanager.donor.name"/></div>
+                    <div style="margin-top:12px;"><spring:message code="Donor Name"/></div>
                     <div style="margin-top:12px;display: inline-table;"><input type="text" id="donorName" name="donorName" value="" onblur="capitalize()" style="min-width:600px;"/></div>
                     <input id="donId" name="donId" type="hidden" value="${donorIdentifier }"></input>
                 </div>
 
-                <div style="margin-top:12px;"><spring:message code="blooddonationmanager.donor.fatherhusbandname"/></div>
+                <div style="margin-top:12px;"><spring:message code="Donor Father/Husbandname"/></div>
                 <div style="margin-top:12px;display: inline-table;"><input type="text" id="fatherHusbandName" name="fatherHusbandName" value="" onblur="capitalize()" style="width:400px;"/></div><br/>
                 <div style="margin-top:12px;display: inline-table;"><spring:message code="blooddonationmanager.patient.id"/>&nbsp;&nbsp;&nbsp;</div><div style="margin-top:12px;display: inline-table;"><b>${patientIdentifier }</b></div>
                 <div style="display:none;">
@@ -35,39 +35,39 @@
                     <div style="display: inline-table;margin-top:12px;" id="valid" name="valid"></div></div>
             </div>
             <div>
-                <div style="display: inline-table;margin-top:12px;"><spring:message code="blooddonationmanager.donor.gender"/></div>
+                <div style="display: inline-table;margin-top:12px;"><spring:message code="Donor Gender"/></div>
                 <div style="display: inline-table;margin-top:12px;"><select name="gender"><option id="M" value="M">Male</option><option id="F" value="F">Female</option></select></div>
 
-                <div style="display: inline-table;margin-top:12px;"><spring:message code="blooddonationmanager.donor.dob"/></div>
+                <div style="display: inline-table;margin-top:12px;"><spring:message code="Donor Date of Birth.dob"/></div>
                 <div style="display: inline-table;margin-top:12px;"><input type="text" id="donorDob" name="donorDob" value=""  onblur="magicDate(this);" /></div><div style="display: inline-table;margin-top:12px;" id="dateLongField">&nbsp;</div>
                 <input  style="margin-top:12px;display: inline-table;" type="checkbox" name="dobEstimated" id="dobEstimated" value="yes" ><spring:message code="blooddonationmanager.dob.etimated"/><div id="dateFieldMsg">dd/mm/yyyy</div>
             </div>
             <div>
-                <div style="margin-top:12px;"><spring:message code="blooddonationmanager.donor.address1"/></div>
+                <div style="margin-top:12px;"><spring:message code="Donor Address1"/></div>
                 <div><input type="text" id="donorAddress1" name="donorAddress1" value="" onblur="validateForm();" style="width:600px;"/></div>
 
-                <div style="margin-top:12px;"><spring:message code="blooddonationmanager.donor.address2"/></div>
+                <div style="margin-top:12px;"><spring:message code="Donor Address"/></div>
                 <div><input type="text" id="donorAddress2" name="donorAddress2" value=""  style="width:600px;"/></div>
                 <div >
                     <%--display: none--%>
                 <%--style="display: none;--%>
-                    <div><spring:message code="blooddonationmanager.donor.cityVillage"/></div>
+                    <div><spring:message code="Donor city/Village"/></div>
                     <div><input type="text" id="cityVillage" name="cityVillage" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.neighborhoodCell"/></div>
+                    <div><spring:message code="Donor NeighborhoodCell"/></div>
                     <div><input type="text" id="neighborhoodCell" name="neighborhoodCell" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.countyDistrict"/></div>
+                    <div><spring:message code="Donor countyDistrict"/></div>
                     <div><input type="text" id="countyDistrict" name="countyDistrict" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.townshipDivision"/></div>
+                    <div><spring:message code="Donor TownshipDivision"/></div>
                     <div><input type="text" id="townshipDivision" name="townshipDivision" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.region"/></div>
+                    <div><spring:message code="Donor Region"/></div>
                     <div><input type="text" id="region" name="region" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.subregion"/></div>
+                    <div><spring:message code="Donor Subregion"/></div>
                     <div><input type="text" id="subregion" name="subregion" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.stateProvince"/></div>
+                    <div><spring:message code="Donor StateProvince"/></div>
                     <div><input type="text" id="stateProvince" name="stateProvince" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.country"/></div>
+                    <div><spring:message code="Donor Country"/></div>
                     <div><input type="text" id="country" name="country" value="" style="width:600px;"/></div>
-                    <div><spring:message code="blooddonationmanager.donor.postalCode"/></div>
+                    <div><spring:message code="Donor PostalCode"/></div>
                     <div><input type="text" id="postalCode" name="postalCode" value="" style="width:600px;"/></div>
                 </div>
             </div>
